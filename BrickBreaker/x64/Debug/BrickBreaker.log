@@ -1,0 +1,5 @@
+﻿  pch.cpp
+  BrickBreaker.cpp
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\brickbreaker.cpp(8): fatal error C1083: Impossible d'ouvrir le fichier include : 'SDL.h' : No such file or directory
+  Config.cpp
+  Génération de code en cours...
