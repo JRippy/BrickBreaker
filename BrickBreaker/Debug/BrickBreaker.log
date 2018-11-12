@@ -1,5 +1,5 @@
-﻿  pch.cpp
-  BrickBreaker.cpp
-  Config.cpp
+﻿  BrickBreaker.cpp
+  Game.cpp
+  Timer.cpp
   Génération de code en cours...
   BrickBreaker.vcxproj -> C:\Users\etudiant\Documents\C++\BrickBreaker\Debug\BrickBreaker.exe
