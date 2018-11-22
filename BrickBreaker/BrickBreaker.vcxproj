@@ -159,6 +159,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Racket.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
@@ -176,6 +177,12 @@
     <ClCompile Include="Racket.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BrickBreaker.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="dot.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

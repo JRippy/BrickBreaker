@@ -36,7 +36,7 @@ void Racket::handleEvent(SDL_Event& e, float timeStep)
 		int x, y;
 		SDL_GetMouseState(&x, &y);
 
-		if (rPosX < 0 || x < 0)
+		if (rPosX <= c.getRacketWidth() / 2 || x <= c.getRacketWidth() / 2)
 		{
 			rPosX = 0;
 		}

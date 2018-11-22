@@ -1,15 +1,4 @@
-﻿  BrickBreaker.cpp
-  Dot.cpp
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(16): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(17): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(31): warning C4244: 'return' : conversion de 'int' en 'float', perte possible de données
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(36): warning C4244: 'return' : conversion de 'int' en 'float', perte possible de données
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(63): warning C4244: '+=' : conversion de 'float' en 'int', perte possible de données
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(80): warning C4244: '+=' : conversion de 'float' en 'int', perte possible de données
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(108): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(109): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
-  Game.cpp
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\game.cpp(25): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 1 est de type 'double'
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\game.cpp(25): warning C4477: 'printf' : la chaîne de format '%d' nécessite un argument de type 'int', mais l'argument variadique 2 est de type 'double'
-  Génération de code en cours...
+﻿  Racket.cpp
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\racket.cpp(39): warning C4804: '<' : utilisation risquée du type 'bool' dans l'opération
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\racket.cpp(41): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
   BrickBreaker.vcxproj -> C:\Users\etudiant\Documents\C++\BrickBreaker\Debug\BrickBreaker.exe
