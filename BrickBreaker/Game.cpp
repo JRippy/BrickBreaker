@@ -18,15 +18,14 @@ bool Game::load(SDL_Renderer* gRenderer)
 
 	newGame = true;
 
-	//r1 = Racket();
+	racket = Racket();
 
-	//r2 = Racket((float)c.getScreenWidth() - c.getRacketWidth(), (float)c.getScreenWidth() / 2 - c.getRacketHeight() / 2);
+	racket.load(gRenderer);
 
-	//r1.load(gRenderer);
-	//r2.load(gRenderer);
+	printf("Load Position Racket : %d, %d", racket.getRPosX(), racket.getRPosY());
 
-	////Calculate time step
-	//timeStep = stepTimer.getTicks() / 1000.f;
+	//Calculate time step
+	timeStep = stepTimer.getTicks() / 1000.f;
 
 	//dl = DashedLine();
 	//dl.load(gRenderer);
@@ -64,21 +63,38 @@ bool Game::input(SDL_Renderer* gRenderer, bool quit)
 			}
 
 			//Handle input for the racket
-			//r1.handleEvent(e, timeStep);
+			racket.handleEvent(e, timeStep);
+
 		}
 	}
-
 	return quit;
 }
 
 void Game::update()
 {
+	Dot otherDot(c.getScreenWidth() / 4, c.getScreenWidth() / 4);
 
+	//Set the wall
+	SDL_Rect wall;
+	wall.x = 300;
+	wall.y = 40;
+	wall.w = 40;
+	wall.h = 400;
+
+	//Calculate time step
+	timeStep = stepTimer.getTicks() / 1000.f;
+
+	//Move for time step
+	dot.move(timeStep, wall, otherDot);
+
+	//Restart step timer
+	stepTimer.start();
 }
 
 void Game::draw(SDL_Renderer* gRenderer)
 {
-
+	//Render racket
+	racket.render(gRenderer);
 }
 
 void Game::initGame()
@@ -96,11 +112,10 @@ bool Game::endGame(int p1, int p2)
 void Game::free()
 {
 	//Free loaded images
-
+	racket.free();
 }
 
 void Game::displayWinner(int p1, int p2, SDL_Color textColor, SDL_Renderer* gRenderer)
 {
 	std::string winnerText = "";
-
 }

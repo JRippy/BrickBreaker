@@ -1,5 +1,10 @@
-﻿  BrickBreaker.cpp
-  Game.cpp
-  Timer.cpp
-  Génération de code en cours...
+﻿  Dot.cpp
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(10): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(11): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(19): warning C4244: 'return' : conversion de 'int' en 'float', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(24): warning C4244: 'return' : conversion de 'int' en 'float', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(51): warning C4244: '+=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(68): warning C4244: '+=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(96): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(97): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
   BrickBreaker.vcxproj -> C:\Users\etudiant\Documents\C++\BrickBreaker\Debug\BrickBreaker.exe

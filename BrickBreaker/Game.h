@@ -1,6 +1,8 @@
 #include "Texture.h"
 #include "Timer.h"
 #include "Config.h"
+#include "Racket.h"
+#include "Dot.h"
 
 #include <string>
 #include <SDL.h>
@@ -31,7 +33,6 @@ private:
 	Texture gPromptTextTexture;
 	Texture gInputTextTexture;
 
-
 	//Set text color as White
 	SDL_Color textColor;
 
@@ -42,5 +43,11 @@ private:
 	bool newGame;
 
 	SDL_Event e;
+
+	Racket racket;
+
+	//The dot that will be moving around on the screen
+	Dot dot;
+
 };
 

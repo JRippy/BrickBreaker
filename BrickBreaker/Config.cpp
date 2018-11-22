@@ -16,3 +16,34 @@ int Config::getScreenWidth()
 {
 	return SCREEN_WIDTH;
 }
+
+int Config::getRacketHeight()
+{
+	return RACKET_HEIGHT;
+}
+
+int Config::getRacketWidth()
+{
+	return RACKET_WIDTH;
+}
+
+int Config::getRacketVel()
+{
+	return RACKET_VEL;
+}
+
+
+int Config::getDotHeight()
+{
+	return DOT_HEIGHT;
+}
+
+int Config::getDotWidth()
+{
+	return DOT_WIDTH;
+}
+
+int Config::getDotVel()
+{
+	return DOT_VEL;
+}
