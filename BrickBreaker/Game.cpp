@@ -85,7 +85,7 @@ void Game::update()
 	timeStep = stepTimer.getTicks() / 1000.f;
 
 	//Move for time step
-	dot.move(timeStep, wall, otherDot);
+	dot.move(timeStep, wall, otherDot.getCollider());
 
 	//Restart step timer
 	stepTimer.start();

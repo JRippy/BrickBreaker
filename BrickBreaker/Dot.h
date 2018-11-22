@@ -19,6 +19,8 @@ public:
 
 	Dot();
 
+	Dot(int x, int y);
+
 	Config c;
 
 	//Initializes the variables

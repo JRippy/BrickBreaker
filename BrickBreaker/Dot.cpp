@@ -6,12 +6,24 @@ Dot::Dot()
 {
 }
 
+Dot::Dot(int x, int y)
+{
+	mPosX = x;
+	mPosY = y;
+}
+
 Dot::Dot(SDL_Renderer * gRenderer) :
 	mVelX((float)c.getDotVel()),
 	mVelY((float)c.getDotVel()),
 	Loaded(false)
 {
 	Loaded = loadMediaDot(gRenderer);
+
+	//Set collision circle size
+	mCollider.r = DOT_WIDTH / 2;
+
+	//Move collider relative to the circle
+	shiftColliders();
 }
 
 float Dot::getMPosX()
@@ -95,4 +107,16 @@ void Dot::resetPosition() {
 	//Initialize the position
 	mPosX = (float)c.getScreenWidth() / 2 - (float)c.getDotWidth();
 	mPosY = (float)c.getScreenHeight() / 2 - (float)c.getDotHeight();
+}
+
+Circle & Dot::getCollider()
+{
+	return mCollider;
+}
+
+void Dot::shiftColliders()
+{
+	//Align collider to center of dot
+	mCollider.x = mPosX;
+	mCollider.y = mPosY;
 }
