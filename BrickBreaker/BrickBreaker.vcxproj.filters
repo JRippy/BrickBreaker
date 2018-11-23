@@ -76,4 +76,9 @@
       <Filter>Fichiers de ressources</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="lazy.ttf">
+      <Filter>Fichiers de ressources</Filter>
+    </Font>
+  </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@ public:
 
 	Dot();
 
-	Dot(int x, int y);
+	Dot(float x, float y);
 
 	Config c;
 
@@ -34,7 +34,7 @@ public:
 	bool isLoaded();
 
 	//Moves the dot and checks collision
-	void move(float timeStep, SDL_Rect& square, Circle& circle);
+	void move(float timeStep, SDL_Rect& square);
 
 	//Shows the dot on the screen
 	void render(SDL_Renderer* gRenderer);
@@ -45,16 +45,21 @@ public:
 	//Gets collision circle
 	Circle& getCollider();
 
+	//Gets collision
+	bool checkCollision(Circle& a, SDL_Rect& b);
+
+	double distanceSquared(int x1, int y1, int x2, int y2);
+
 	void free();
 
 private:
 	bool Loaded;
 
 	//The X and Y offsets of the dot
-	int mPosX, mPosY;
+	float mPosX, mPosY;
 
 	//The velocity of the dot
-	int mVelX, mVelY;
+	float mVelX, mVelY;
 
 	//Scene textures
 	Texture gDotTexture;
@@ -65,11 +70,5 @@ private:
 	//Moves the collision circle relative to the dot's offset
 	void shiftColliders();
 
-	//The dimensions of the dot
-	static const int DOT_WIDTH = 20;
-	static const int DOT_HEIGHT = 20;
-
-	//Maximum axis velocity of the dot
-	static const int DOT_VEL = 1;
 };
 

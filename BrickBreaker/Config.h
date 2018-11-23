@@ -33,7 +33,7 @@ private:
 	static const int DOT_HEIGHT = 20;
 
 	//Maximum axis velocity of the dot
-	static const int DOT_VEL = 200;
+	static const int DOT_VEL = 100;
 
 };
 

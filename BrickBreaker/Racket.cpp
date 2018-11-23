@@ -5,7 +5,7 @@
 
 Racket::Racket() :
 	rPosX((float)(c.getScreenWidth() / 2) - (c.getRacketWidth() / 2)),
-	rPosY((float)(c.getScreenHeight() - c.getRacketHeight())),
+	rPosY((float)(c.getScreenHeight() - (c.getRacketHeight())*2)),
 	rVelY((float)c.getRacketVel())
 {
 }
@@ -36,12 +36,11 @@ void Racket::handleEvent(SDL_Event& e, float timeStep)
 		int x, y;
 		SDL_GetMouseState(&x, &y);
 
-		if (rPosX <= c.getRacketWidth() / 2 || x <= c.getRacketWidth() / 2)
+		if (x <= c.getRacketWidth() / 2)
 		{
 			rPosX = 0;
 		}
-		
-		if (rPosX > c.getScreenWidth() - c.getRacketWidth() || x > c.getScreenWidth() - c.getRacketWidth())
+		else if (rPosX > c.getScreenWidth() - (c.getRacketWidth() / 2) || x > c.getScreenWidth() - (c.getRacketWidth() / 2))
 		{
 			rPosX = (float)c.getScreenWidth() - (float)c.getRacketWidth();
 		}

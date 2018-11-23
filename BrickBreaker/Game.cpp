@@ -22,16 +22,14 @@ bool Game::load(SDL_Renderer* gRenderer)
 
 	racket.load(gRenderer);
 
-	printf("Load Position Racket : %d, %d", racket.getRPosX(), racket.getRPosY());
-
 	//Calculate time step
 	timeStep = stepTimer.getTicks() / 1000.f;
 
 	//dl = DashedLine();
 	//dl.load(gRenderer);
 
-	//dot = Dot(gRenderer);
-	//dot.loadMediaDot(gRenderer);
+	dot = Dot(gRenderer);
+	dot.loadMediaDot(gRenderer);
 
 
 	//return dot.isLoaded(); //loadMediaDot(gRenderer);
@@ -72,20 +70,18 @@ bool Game::input(SDL_Renderer* gRenderer, bool quit)
 
 void Game::update()
 {
-	Dot otherDot(c.getScreenWidth() / 4, c.getScreenWidth() / 4);
-
 	//Set the wall
 	SDL_Rect wall;
-	wall.x = 300;
-	wall.y = 40;
-	wall.w = 40;
-	wall.h = 400;
+	wall.x = racket.getRPosX();;
+	wall.y = racket.getRPosY();;
+	wall.w = c.getRacketWidth();
+	wall.h = c.getRacketHeight();
 
 	//Calculate time step
 	timeStep = stepTimer.getTicks() / 1000.f;
 
 	//Move for time step
-	dot.move(timeStep, wall, otherDot.getCollider());
+	dot.move(timeStep, wall);
 
 	//Restart step timer
 	stepTimer.start();
@@ -95,6 +91,7 @@ void Game::draw(SDL_Renderer* gRenderer)
 {
 	//Render racket
 	racket.render(gRenderer);
+	dot.render(gRenderer);
 }
 
 void Game::initGame()

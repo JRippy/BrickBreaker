@@ -1,4 +1,4 @@
-﻿  Racket.cpp
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\racket.cpp(39): warning C4804: '<' : utilisation risquée du type 'bool' dans l'opération
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\racket.cpp(41): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+﻿  Dot.cpp
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(148): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(149): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
   BrickBreaker.vcxproj -> C:\Users\etudiant\Documents\C++\BrickBreaker\Debug\BrickBreaker.exe
