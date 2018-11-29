@@ -20,7 +20,7 @@ public:
 	void handleEvent(SDL_Event& e, float timeStep);
 
 	//Load
-	void load(SDL_Renderer* gRenderer);
+	void load();
 
 	//Moves the racket
 	void move(float timeStep);

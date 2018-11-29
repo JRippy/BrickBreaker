@@ -47,3 +47,13 @@ int Config::getDotVel()
 {
 	return DOT_VEL;
 }
+
+int Config::getBrickHeight()
+{
+	return BRICK_HEIGHT;
+}
+
+int Config::getBrickWidth()
+{
+	return BRICK_WIDTH;
+}

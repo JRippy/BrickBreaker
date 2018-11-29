@@ -55,7 +55,7 @@ void Racket::handleEvent(SDL_Event& e, float timeStep)
 
 }
 
-void Racket::load(SDL_Renderer * gRenderer)
+void Racket::load()
 {
 	racket.w = c.getRacketWidth();
 	racket.h = c.getRacketHeight();

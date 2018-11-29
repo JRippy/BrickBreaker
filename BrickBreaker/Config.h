@@ -15,6 +15,9 @@ public:
 	static int getDotWidth();
 	static int getDotVel();
 
+	static int getBrickHeight();
+	static int getBrickWidth();
+
 private:
 
 	//Screen dimension constants
@@ -33,7 +36,11 @@ private:
 	static const int DOT_HEIGHT = 20;
 
 	//Maximum axis velocity of the dot
-	static const int DOT_VEL = 100;
+	static const int DOT_VEL = 200;
+
+	//The dimensions of the dot
+	static const int BRICK_WIDTH = 80;
+	static const int BRICK_HEIGHT = 20;
 
 };
 

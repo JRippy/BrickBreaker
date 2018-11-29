@@ -19,8 +19,10 @@ bool Game::load(SDL_Renderer* gRenderer)
 	newGame = true;
 
 	racket = Racket();
+	bricks = Bricks();
 
-	racket.load(gRenderer);
+	racket.load();
+	bricks.load();
 
 	//Calculate time step
 	timeStep = stepTimer.getTicks() / 1000.f;
@@ -92,6 +94,7 @@ void Game::draw(SDL_Renderer* gRenderer)
 	//Render racket
 	racket.render(gRenderer);
 	dot.render(gRenderer);
+	bricks.render(gRenderer);
 }
 
 void Game::initGame()

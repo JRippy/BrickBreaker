@@ -72,7 +72,7 @@ void Dot::move(float timeStep, SDL_Rect& square)
 	shiftColliders();
 
 	////If the dot went too far to the left or right
-	if (mPosX + c.getDotWidth() >= c.getScreenWidth() || mPosX < 0)
+	if (mPosX + c.getDotWidth() >= c.getScreenWidth() || mPosX <= 0)
 	{
 		mVelX = -mVelX;
 		shiftColliders();
@@ -98,24 +98,45 @@ void Dot::move(float timeStep, SDL_Rect& square)
 
 	if (checkCollision(mCollider, square))
 	{
-		const float Pi = 3.141592654f;
-		float MAXBOUNCEANGLE = 6 * Pi / 12;
+		if (mVelY != 0.0f)
+		{
+			if (mPosY + (c.getDotHeight() / 2) <= square.y)
+			{
+				const float Pi = 3.141592654f;
+				float MAXBOUNCEANGLE = 8 * Pi / 12;
+				int intersect = mPosX - (square.x + (c.getRacketWidth() / 2));
 
-		float relativeIntersectX = (mPosX + (c.getRacketWidth() / 2)) - dotYMiddle;
-		float normalizedRelativeIntersectionX = (relativeIntersectX / (c.getRacketWidth() / 2));
-		float bounceAngle = normalizedRelativeIntersectionX * MAXBOUNCEANGLE;
+				float relativeIntersectX = (mPosX + (c.getRacketWidth() / 2)) - dotYMiddle;
+				float normalizedRelativeIntersectionX = (relativeIntersectX / (c.getRacketWidth() / 2));
+				float bounceAngle = normalizedRelativeIntersectionX * MAXBOUNCEANGLE;
 
-		mVelX = -mVelX;
-		//mVelY = -mVelY;
-		mVelY = -mVelY * sin(bounceAngle);
+				if (intersect < 0) {
+					mVelX = -mVelX;
+				}
 
-		//printf("Paddle mVelX : %f + mVelY : %f \n", mVelX, mVelY);
-		printf("Vitesse Y : %f\n", -mVelY);
-		printf("New Vitesse Y : %f\n", mVelY * sin(bounceAngle));
-		printf("bounclAngle : %f\n", bounceAngle);
-		printf("Sin bounclAngle : %f\n", sin(bounceAngle));
-		printf("Cos bounclAngle : %f\n", cos(bounceAngle));
-		printf("Relative bounclAngle : %f\n", normalizedRelativeIntersectionX);
+				mVelY = -mVelY * sin(bounceAngle);
+				mPosY -= 0.01;
+
+				//printf("Paddle mVelX : %f + mVelY : %f \n", mVelX, mVelY);
+				//printf("\nVitesse Y : %f\n", -mVelY);
+				//printf("New Vitesse Y : %f\n", mVelY * sin(bounceAngle));
+				//printf("bounclAngle : %f\n", bounceAngle);
+				//printf("Sin bounclAngle : %f\n", sin(bounceAngle));
+				//printf("Intersect : %d\n", intersect);
+				//printf("Relative bounclAngle : %f\n\n", normalizedRelativeIntersectionX);
+			}
+			else
+			{
+				mVelX = -mVelX;
+			}
+
+		}
+		else
+		{
+			mVelX = -mVelX;
+			mVelY += 10;
+		}
+
 	}
 }
 

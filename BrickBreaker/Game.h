@@ -1,6 +1,7 @@
 #include "Texture.h"
 #include "Timer.h"
 #include "Config.h"
+#include "Bricks.h"
 #include "Racket.h"
 #include "Dot.h"
 
@@ -45,6 +46,8 @@ private:
 	SDL_Event e;
 
 	Racket racket;
+
+	Bricks bricks;
 
 	//The dot that will be moving around on the screen
 	Dot dot;
