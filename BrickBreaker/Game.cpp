@@ -94,7 +94,7 @@ void Game::draw(SDL_Renderer* gRenderer)
 	//Render racket
 	racket.render(gRenderer);
 	dot.render(gRenderer);
-	bricks.render(gRenderer);
+	bricks.render(gRenderer, dot.getMPosX(), dot.getMPosY());
 }
 
 void Game::initGame()

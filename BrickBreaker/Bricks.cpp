@@ -26,7 +26,7 @@ void Bricks::load()
 	}
 }
 
-void Bricks::render(SDL_Renderer * gRenderer)
+void Bricks::render(SDL_Renderer * gRenderer, float dotX, float dotY)
 {
 	int bricksNum = 0;
 	int bricksColNum = 1;
@@ -36,6 +36,18 @@ void Bricks::render(SDL_Renderer * gRenderer)
 	{
 		for (size_t j = 0; j < 280; j += 20)
 		{
+			if (dotY < c.getBrickHeight() / 2)
+			{
+
+				int dotBrickx = (int)(dotX + 1) / c.getBrickWidth();
+				int dotBricky = (int)(dotY + 1) / c.getBrickHeight();
+
+				printf("Brick Actif : %d \n", vBricksActive.size());
+				printf("Coordinate : %f, %f \n", dotX, dotY);
+				printf("Coordinate Bricks: %d, %d \n", dotBrickx, dotBricky);
+
+				desactiveBrick(dotBrickx * dotBricky);
+			}
 
 			if (vBricksActive[bricksNum] == true) {
 
@@ -65,10 +77,12 @@ void Bricks::render(SDL_Renderer * gRenderer)
 	}
 }
 
-void Bricks::activeBrick()
+void Bricks::activeBrick(int i)
 {
+	vBricksActive[i] = true;
 }
 
-void Bricks::desactiveBrick()
+void Bricks::desactiveBrick(int i)
 {
+	vBricksActive[i] = false;
 }

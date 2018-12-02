@@ -1,4 +1,5 @@
 #pragma once
+#include "Dot.h"
 #include "Racket.h"
 #include <vector>
 
@@ -11,11 +12,11 @@ public:
 	void load();
 
 	//Shows bricks on the screen
-	void render(SDL_Renderer* gRenderer);
+	void render(SDL_Renderer* gRenderer, float dotX, float dotY);
 
-	void activeBrick();
+	void activeBrick(int i);
 
-	void desactiveBrick();
+	void desactiveBrick(int i);
 
 private:
 
