@@ -43,6 +43,16 @@ float Dot::getMPosY()
 	return mPosY;
 }
 
+float Dot::getMVelX()
+{
+	return mVelX;
+}
+
+float Dot::getMVelY()
+{
+	return mVelY;
+}
+
 bool Dot::loadMediaDot(SDL_Renderer * gRenderer)
 {
 	//Loading success flag
@@ -140,6 +150,16 @@ void Dot::move(float timeStep, SDL_Rect& square)
 	}
 }
 
+void Dot::changeDirectionX()
+{
+	mVelX = -mVelX;
+}
+
+void Dot::changeDirectionY()
+{
+	mVelY = -mVelY;
+}
+
 void Dot::render(SDL_Renderer* gRenderer)
 {
 	//Load dot texture
@@ -221,6 +241,41 @@ double Dot::distanceSquared(int x1, int y1, int x2, int y2)
 	int deltaX = x2 - x1;
 	int deltaY = y2 - y1;
 	return deltaX * deltaX + deltaY * deltaY;
+}
+
+void Dot::handleEvent(SDL_Event & e, float timeStep)
+{
+	//If a key was pressed
+	if (e.type == SDL_MOUSEBUTTONDOWN)
+	{
+		mousePress(e.button);
+	}
+}
+
+void Dot::mousePress(SDL_MouseButtonEvent& b) {
+	if (b.button == SDL_BUTTON_LEFT) {
+		//handle a left-click
+		int x, y;
+		SDL_GetMouseState(&x, &y);
+
+		mPosX = x;
+		mPosY = y;
+
+		if (x <= c.getRacketWidth() / 2)
+		{
+			mPosX = 0;
+		}
+		else if (mPosX > c.getScreenWidth() - (c.getRacketWidth() / 2) || x > c.getScreenWidth() - (c.getRacketWidth() / 2))
+		{
+			mPosX = (float)c.getScreenWidth() - (float)c.getRacketWidth();
+		}
+		else if (x < c.getScreenWidth() && x > 0)
+		{
+			//Adjust position
+			mPosX = (float)x - c.getRacketWidth() / 2;
+			//move(timeStep);
+		}
+	}
 }
 
 void Dot::free()

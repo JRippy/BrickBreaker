@@ -29,12 +29,18 @@ public:
 	float getMPosX();
 	float getMPosY();
 
+	float getMVelX();
+	float getMVelY();
+
 	//load Media Dot
 	bool loadMediaDot(SDL_Renderer* gRenderer);
 	bool isLoaded();
 
 	//Moves the dot and checks collision
 	void move(float timeStep, SDL_Rect& square);
+
+	void changeDirectionX();
+	void changeDirectionY();
 
 	//Shows the dot on the screen
 	void render(SDL_Renderer* gRenderer);
@@ -49,6 +55,10 @@ public:
 	bool checkCollision(Circle& a, SDL_Rect& b);
 
 	double distanceSquared(int x1, int y1, int x2, int y2);
+
+	//Debug
+	void handleEvent(SDL_Event& e, float timeStep);
+	void mousePress(SDL_MouseButtonEvent& b);
 
 	void free();
 

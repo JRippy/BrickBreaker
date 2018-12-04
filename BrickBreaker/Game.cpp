@@ -65,6 +65,9 @@ bool Game::input(SDL_Renderer* gRenderer, bool quit)
 			//Handle input for the racket
 			racket.handleEvent(e, timeStep);
 
+			//Debug
+			dot.handleEvent(e, timeStep);
+
 		}
 	}
 	return quit;
@@ -85,6 +88,18 @@ void Game::update()
 	//Move for time step
 	dot.move(timeStep, wall);
 
+	bricks.isCollide(dot.getMPosX(), dot.getMPosY(), dot.getMVelX(), dot.getMVelY());
+
+	if (dot.checkCollision(dot.getCollider(), wall))
+	{
+
+
+		if (bricks.changeVelY()) {
+			dot.changeDirectionY();
+			bricks.reInitBoolVel();
+		}
+	}
+
 	//Restart step timer
 	stepTimer.start();
 }
@@ -94,7 +109,7 @@ void Game::draw(SDL_Renderer* gRenderer)
 	//Render racket
 	racket.render(gRenderer);
 	dot.render(gRenderer);
-	bricks.render(gRenderer, dot.getMPosX(), dot.getMPosY());
+	bricks.render(gRenderer);
 }
 
 void Game::initGame()

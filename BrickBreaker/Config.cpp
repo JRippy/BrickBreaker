@@ -57,3 +57,8 @@ int Config::getBrickWidth()
 {
 	return BRICK_WIDTH;
 }
+
+int Config::getBrickNum()
+{
+	return BRICK_NUM;
+}

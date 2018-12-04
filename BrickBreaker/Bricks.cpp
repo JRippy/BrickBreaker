@@ -5,9 +5,16 @@
 Bricks::Bricks()
 {
 	vBricks.reserve(140);
-	vBricksActive.reserve(140);
-	vBricksActive.resize(140, true);
-
+	
+	for (size_t i = 0; i < c.getBrickNum(); i++)
+	{
+		vBricksActive[i] = true;
+	}
+	
+	previewColumn = -1;
+	previewRow = -1;
+	changeX = false;
+	changeY = false;
 }
 
 void Bricks::load()
@@ -26,7 +33,7 @@ void Bricks::load()
 	}
 }
 
-void Bricks::render(SDL_Renderer * gRenderer, float dotX, float dotY)
+void Bricks::render(SDL_Renderer * gRenderer)
 {
 	int bricksNum = 0;
 	int bricksColNum = 1;
@@ -36,18 +43,6 @@ void Bricks::render(SDL_Renderer * gRenderer, float dotX, float dotY)
 	{
 		for (size_t j = 0; j < 280; j += 20)
 		{
-			if (dotY < c.getBrickHeight() / 2)
-			{
-
-				int dotBrickx = (int)(dotX + 1) / c.getBrickWidth();
-				int dotBricky = (int)(dotY + 1) / c.getBrickHeight();
-
-				printf("Brick Actif : %d \n", vBricksActive.size());
-				printf("Coordinate : %f, %f \n", dotX, dotY);
-				printf("Coordinate Bricks: %d, %d \n", dotBrickx, dotBricky);
-
-				desactiveBrick(dotBrickx * dotBricky);
-			}
 
 			if (vBricksActive[bricksNum] == true) {
 
@@ -77,6 +72,67 @@ void Bricks::render(SDL_Renderer * gRenderer, float dotX, float dotY)
 	}
 }
 
+bool Bricks::isCollide(float dotX, float dotY, float dotVelX, float dotVelY)
+{
+	if (dotY < (c.getScreenHeight() / 2 - 20))
+	{
+
+		int dotBrickx = (int)(dotX) / c.getBrickWidth();
+		int dotBricky = (int)(dotY) / c.getBrickHeight();
+
+		int numB = dotBrickx * 14 + dotBricky;
+
+		if (numB < c.getBrickNum() && isActiv(numB))
+		{
+			desactiveBrick(numB);
+
+			if (previewColumn == dotBrickx)
+			{
+				if (previewRow == dotBricky)
+				{
+					printf("Impossible");
+				}
+				else
+				{
+					changeX = true;
+				}
+			}
+			else
+			{
+				if (previewColumn == dotBrickx)
+				{
+					changeY = true;
+				}
+				else
+				{
+					changeY = true;
+					changeX = true;
+				}
+			}
+
+
+			previewColumn = dotBrickx;
+			previewRow = dotBricky;
+
+			return true;
+		}
+
+		previewColumn = dotBrickx;
+		previewRow = dotBricky;
+
+		return false;
+	}
+
+	return false;
+}
+
+bool Bricks::isCollideBrick(float timeStep, SDL_Rect & square)
+{
+	return false;
+}
+
+
+
 void Bricks::activeBrick(int i)
 {
 	vBricksActive[i] = true;
@@ -85,4 +141,25 @@ void Bricks::activeBrick(int i)
 void Bricks::desactiveBrick(int i)
 {
 	vBricksActive[i] = false;
+}
+
+bool Bricks::isActiv(int k)
+{
+	return vBricksActive[k];
+}
+
+bool Bricks::changeVelX()
+{
+	return changeX;
+}
+
+bool Bricks::changeVelY()
+{
+	return changeY;
+}
+
+void Bricks::reInitBoolVel()
+{
+	changeX = false;
+	changeY = false;
 }

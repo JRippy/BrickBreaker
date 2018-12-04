@@ -65,7 +65,6 @@ void Racket::load()
 void Racket::move(float timeStep)
 {
 
-
 	//If the racket went too far up or down
 	if (rPosX < 0)
 	{

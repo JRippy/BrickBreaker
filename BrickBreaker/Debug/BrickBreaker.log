@@ -1,2 +1,8 @@
-﻿  Bricks.cpp
-  BrickBreaker.vcxproj -> C:\Users\Julien\source\repos\BrickBreaker\Debug\BrickBreaker.exe
+﻿  BrickBreaker.cpp
+  Bricks.cpp
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\bricks.cpp(9): warning C4018: '<' : incompatibilité signed/unsigned
+  Game.cpp
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\game.cpp(80): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\game.cpp(81): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+  Génération de code en cours...
+  BrickBreaker.vcxproj -> C:\Users\etudiant\Documents\C++\BrickBreaker\Debug\BrickBreaker.exe
