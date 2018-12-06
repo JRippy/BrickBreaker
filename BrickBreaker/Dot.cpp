@@ -89,7 +89,6 @@ void Dot::move(float timeStep, SDL_Rect& square)
 		//resetPosition();
 	}
 
-
 	//Move the dot up or down
 	mPosY += mVelY * timeStep;
 	shiftColliders();

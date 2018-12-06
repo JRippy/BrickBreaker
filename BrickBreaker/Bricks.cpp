@@ -131,8 +131,6 @@ bool Bricks::isCollideBrick(float timeStep, SDL_Rect & square)
 	return false;
 }
 
-
-
 void Bricks::activeBrick(int i)
 {
 	vBricksActive[i] = true;
