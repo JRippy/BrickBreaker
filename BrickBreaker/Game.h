@@ -1,7 +1,7 @@
 #include "Texture.h"
 #include "Timer.h"
 #include "Config.h"
-#include "Bricks.h"
+#include "BricksArray.h"
 #include "Racket.h"
 #include "Dot.h"
 

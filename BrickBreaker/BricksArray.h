@@ -1,12 +1,17 @@
 #pragma once
 #include "Dot.h"
 #include "Racket.h"
+#include "Brick.h"
+#include "Config.h"
 #include <vector>
 
 class Bricks :
 	public Racket
 {
 public:
+
+	Config c;
+
 	Bricks();
 
 	void load();
@@ -14,11 +19,13 @@ public:
 	//Shows bricks on the screen
 	void render(SDL_Renderer* gRenderer);
 
-	bool isCollide(float dotX, float dotY, float dotVelX, float dotVelY);
+	bool isCollide(Circle& c);
 
-	bool isCollideBrick(float timeStep, SDL_Rect& square);
+	bool isCollideBrick(Circle& a, SDL_Rect& b);
 
-	void activeBrick(int i);
+	double distanceSquared(int x1, int y1, int x2, int y2);
+
+	void activateBrick(int i);
 
 	void desactiveBrick(int j);
 
@@ -29,10 +36,13 @@ public:
 
 	void reInitBoolVel();
 
+	void initBricks();
+
 private:
 
-	std::vector<int> vBricks;
+	std::vector<Brick> vBricks;
 	bool vBricksActive[140];
+	int activeBrick;
 
 	//Texture
 	Texture gBrickTexture;

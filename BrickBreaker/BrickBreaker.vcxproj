@@ -154,7 +154,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Bricks.h" />
+    <ClInclude Include="Brick.h" />
+    <ClInclude Include="BricksArray.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="Dot.h" />
     <ClInclude Include="Game.h" />
@@ -165,8 +166,9 @@
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Brick.cpp" />
     <ClCompile Include="BrickBreaker.cpp" />
-    <ClCompile Include="Bricks.cpp" />
+    <ClCompile Include="BricksArray.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="Dot.cpp" />
     <ClCompile Include="Game.cpp" />

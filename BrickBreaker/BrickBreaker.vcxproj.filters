@@ -39,7 +39,10 @@
     <ClInclude Include="resource.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Bricks.h">
+    <ClInclude Include="BricksArray.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="Brick.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
@@ -68,7 +71,10 @@
     <ClCompile Include="Dot.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="Bricks.cpp">
+    <ClCompile Include="BricksArray.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Brick.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

@@ -88,16 +88,26 @@ void Game::update()
 	//Move for time step
 	dot.move(timeStep, wall);
 
-	bricks.isCollide(dot.getMPosX(), dot.getMPosY(), dot.getMVelX(), dot.getMVelY());
-
-	if (dot.checkCollision(dot.getCollider(), wall))
+	if (bricks.isCollide(dot.getCollider()))
+	//if (dot.checkCollision(dot.getCollider(), wall))
 	{
-
-
 		if (bricks.changeVelY()) {
+
+			if (bricks.changeVelX()) {
+				dot.changeDirectionX();
+			}			
+			
 			dot.changeDirectionY();
 			bricks.reInitBoolVel();
 		}
+		else
+		{
+			if (bricks.changeVelX()) {
+				dot.changeDirectionX();
+				bricks.reInitBoolVel();
+			}
+		}
+
 	}
 
 	//Restart step timer
