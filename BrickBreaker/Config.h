@@ -42,7 +42,7 @@ private:
 	//The dimensions of the dot
 	static const int BRICK_WIDTH = 80;
 	static const int BRICK_HEIGHT = 20;
-	static const int BRICK_NUM = 112;
+	static const int BRICK_NUM = 140;
 
 };
 

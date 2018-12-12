@@ -47,7 +47,7 @@ private:
 
 	Racket racket;
 
-	Bricks bricks;
+	BricksArray bricksA;
 
 	//The dot that will be moving around on the screen
 	Dot dot;

@@ -1,3 +1,8 @@
-﻿  BricksArray.cpp
-c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\bricksarray.cpp(227): warning C4018: '<' : incompatibilité signed/unsigned
+﻿  Dot.cpp
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(116): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(127): warning C4305: '-=' : troncation de 'double' à 'float'
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(188): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(189): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(260): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+c:\users\etudiant\documents\c++\brickbreaker\brickbreaker\dot.cpp(261): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
   BrickBreaker.vcxproj -> C:\Users\etudiant\Documents\C++\BrickBreaker\Debug\BrickBreaker.exe

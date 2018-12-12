@@ -260,13 +260,13 @@ void Dot::mousePress(SDL_MouseButtonEvent& b) {
 		mPosX = x;
 		mPosY = y;
 
-		if (x <= c.getRacketWidth() / 2)
+		if (x <= 0)
 		{
 			mPosX = 0;
 		}
 		else if (mPosX > c.getScreenWidth() - (c.getRacketWidth() / 2) || x > c.getScreenWidth() - (c.getRacketWidth() / 2))
 		{
-			mPosX = (float)c.getScreenWidth() - (float)c.getRacketWidth();
+			mPosX = (float)c.getScreenWidth() - (float)c.getRacketWidth() / 2;
 		}
 		else if (x < c.getScreenWidth() && x > 0)
 		{

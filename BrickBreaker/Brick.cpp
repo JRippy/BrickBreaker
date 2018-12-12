@@ -6,8 +6,11 @@ Brick::Brick()
 {
 }
 
-Brick::Brick(int coord, int nmB)
+Brick::Brick(int x, int y, int coord, int nmB)
 {
+	posBX = x;
+	posBY = y;
 	coordinate = coord;
 	numBrick = numBrick;
+	visible = true;
 }

@@ -5,14 +5,13 @@
 #include "Config.h"
 #include <vector>
 
-class Bricks :
-	public Racket
+class BricksArray : public Racket
 {
 public:
 
 	Config c;
 
-	Bricks();
+	BricksArray();
 
 	void load();
 
@@ -27,7 +26,7 @@ public:
 
 	void activateBrick(int i);
 
-	void desactiveBrick(int j);
+	void desactivateBrick(int j);
 
 	bool isActiv(int k);
 
@@ -37,12 +36,13 @@ public:
 	void reInitBoolVel();
 
 	void initBricks();
+	void reinitBricks();
 
 private:
 
 	std::vector<Brick> vBricks;
-	bool vBricksActive[140];
 	int activeBrick;
+	int desactiveBrick;
 
 	//Texture
 	Texture gBrickTexture;

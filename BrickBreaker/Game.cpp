@@ -19,10 +19,10 @@ bool Game::load(SDL_Renderer* gRenderer)
 	newGame = true;
 
 	racket = Racket();
-	bricks = Bricks();
+	bricksA = BricksArray();
 
 	racket.load();
-	bricks.load();
+	bricksA.load();
 
 	//Calculate time step
 	timeStep = stepTimer.getTicks() / 1000.f;
@@ -88,23 +88,23 @@ void Game::update()
 	//Move for time step
 	dot.move(timeStep, wall);
 
-	if (bricks.isCollide(dot.getCollider()))
+	if (bricksA.isCollide(dot.getCollider()))
 	//if (dot.checkCollision(dot.getCollider(), wall))
 	{
-		if (bricks.changeVelY()) {
+		if (bricksA.changeVelY()) {
 
-			if (bricks.changeVelX()) {
+			if (bricksA.changeVelX()) {
 				dot.changeDirectionX();
 			}			
 			
 			dot.changeDirectionY();
-			bricks.reInitBoolVel();
+			bricksA.reInitBoolVel();
 		}
 		else
 		{
-			if (bricks.changeVelX()) {
+			if (bricksA.changeVelX()) {
 				dot.changeDirectionX();
-				bricks.reInitBoolVel();
+				bricksA.reInitBoolVel();
 			}
 		}
 
@@ -119,7 +119,7 @@ void Game::draw(SDL_Renderer* gRenderer)
 	//Render racket
 	racket.render(gRenderer);
 	dot.render(gRenderer);
-	bricks.render(gRenderer);
+	bricksA.render(gRenderer);
 }
 
 void Game::initGame()
